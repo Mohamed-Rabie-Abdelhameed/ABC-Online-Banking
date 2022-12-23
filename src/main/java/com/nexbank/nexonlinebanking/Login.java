@@ -480,11 +480,11 @@ public class Login extends javax.swing.JFrame {
     PreparedStatement pst = null;
 
     private void launchDashboard(User c) {
-        this.dispose();
         Dashboard d = new Dashboard();
         d.currentUser = c;
         d.setHome();
         d.setVisible(true);
+        this.dispose();
     }
 
     private void login() {
