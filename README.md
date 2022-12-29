@@ -2,8 +2,7 @@
 Simple Online Banking Application Using Java Swing
 ## For JAR File:  
 Go to: [JAR File](target/Nex-Online-Banking-1.0-SNAPSHOT-jar-with-dependencies.jar)  
-
-## For Setup File:   
+## For Setup File:  
 Go to: [Setup File](setup/Nex Online Bank setup.exe)   
 
 ![login](https://user-images.githubusercontent.com/83073238/209364523-c11dbb8d-47af-42b9-988e-224809739a86.png)
