@@ -496,7 +496,7 @@ public class Login extends javax.swing.JFrame {
         }
         String sql = "Select * From users Where email = ? And password = ?";
         try {
-            conn = MySQLConnector.connectDB();
+            conn = Connect.connectDB();
             assert conn != null;
             pst = conn.prepareStatement(sql);
             pst.setString(1, loginEmail.getText());
@@ -517,7 +517,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     private boolean emailAlreadyExists() throws SQLException {
-        conn = MySQLConnector.connectDB();
+        conn = Connect.connectDB();
         String sql = "Select * From users Where email = ?";
         assert conn != null;
         pst = conn.prepareStatement(sql);
@@ -527,7 +527,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     private boolean accountNumberAlreadyExists() throws SQLException {
-        conn = MySQLConnector.connectDB();
+        conn = Connect.connectDB();
         String sql = "Select * From users Where account_number = ?";
         assert conn != null;
         pst = conn.prepareStatement(sql);
@@ -580,7 +580,7 @@ public class Login extends javax.swing.JFrame {
             if (isValidUser()) {
                 String sql = "insert into users (name, email, account_number,balance ,dob, password) values (?,?,?,?,?,?)";
                 User newUser = new User(signupName.getText(), signupEmail.getText(), signupDOB.getText(), Integer.parseInt(signupAccountNumber.getText()));
-                conn = MySQLConnector.connectDB();
+                conn = Connect.connectDB();
                 assert conn != null;
                 pst = conn.prepareStatement(sql);
                 pst.setString(1, newUser.getName());
