@@ -750,7 +750,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
             double total = amount + currentUser.getBalance();
             currentUser.setBalance(total);
-            Connection conn = Connect.connectDB();
+            Connection conn = MySQLConnector.connectDB();
             String sql = "UPDATE users SET balance = ? Where email = ?";
             assert conn != null;
             pst = conn.prepareStatement(sql);
@@ -787,7 +787,7 @@ public class Dashboard extends javax.swing.JFrame {
             currentUser.setBalance(total);
             try {
 
-                Connection conn = Connect.connectDB();
+                Connection conn = MySQLConnector.connectDB();
                 String sql = "UPDATE users SET balance = ? Where email = ?";
                 assert conn != null;
                 pst = conn.prepareStatement(sql);
@@ -821,7 +821,7 @@ public class Dashboard extends javax.swing.JFrame {
             throw new IllegalArgumentException();
         }
         int recieverAccNumber = Integer.parseInt(recieverAccountNumber.getText());
-        Connection conn = Connect.connectDB();
+        Connection conn = MySQLConnector.connectDB();
         String sql = "SELECT* FROM users WHERE account_number = ?";
         assert conn != null;
         pst = conn.prepareStatement(sql);
@@ -879,7 +879,7 @@ public class Dashboard extends javax.swing.JFrame {
             result = Double.parseDouble(req_result);
             return amount * result;
         } else {
-            JOptionPane.showMessageDialog(null, "Connection Failed!", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "MySQLConnectorion Failed!", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         return 0;
     }
