@@ -1,4 +1,4 @@
-# ABC-Online-Banking
+# Nex-Online-Banking
 Simple Online Banking Application Using Java Swing   
 ## The Application consists of:
 - Login page
